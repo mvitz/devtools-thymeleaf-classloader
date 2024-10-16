@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>DevTools Thymeleaf ClassLoader</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th scope="row"><code>${foo instanceof T(com.innoq.dtc.Application$SomeClass)}</code></th>
+                <td th:text="${foo instanceof T(com.innoq.dtc.Application$SomeClass)}"></td>
+            </tr>
+            <tr>
+                <th scope="row"><code>${foo.getClass()}</code></th>
+                <td th:text="${foo.getClass()}"></td>
+            </tr>
+            <tr>
+                <th scope="row"><code>${T(com.innoq.dtc.Application$SomeClass)}</code></th>
+                <td th:text="${T(com.innoq.dtc.Application$SomeClass)}"></td>
+            </tr>
+            <tr>
+                <th scope="row"><code>${foo.getClass().getClassLoader()}</code></th>
+                <td th:text="${foo.getClass().getClassLoader()}"></td>
+            </tr>
+            <tr>
+                <th scope="row"><code>${T(com.innoq.dtc.Application$SomeClass).getClassLoader()}</code></th>
+                <td th:text="${T(com.innoq.dtc.Application$SomeClass).getClassLoader()}"></td>
+            </tr>
+        </table>
+    </body>
+</html>
